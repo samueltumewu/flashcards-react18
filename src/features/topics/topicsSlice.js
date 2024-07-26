@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import {v4 as uuidv4} from 'uuid';
 
 const initialStateTopic = {
     '123': {
@@ -15,9 +15,10 @@ export const topicsSlice = createSlice({
     initialState: initialStateTopic,
     reducers: {
         'addTopic': (state, action) => {
+            const {id} = action.payload;
             let newTopic = action.payload;
-            newTopic["quizIds"] = [''];
-            state.topics.push(newTopic);
+            newTopic.quizIds = [''];
+            state[id] = newTopic;
         }
     }
 })

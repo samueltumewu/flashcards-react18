@@ -26,8 +26,6 @@ export default function NewQuizForm() {
     // create the new cards here and add each card's id to cardIds
     // create the new quiz here
 
-    const quizId = uuidv4();
-
     // dispatch add quiz action 
     const dispatchObject = {
       id: uuidv4(),
